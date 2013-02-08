@@ -1,5 +1,16 @@
 SPS 2.0 Test Suite Release Notes
 
+
+Revision r4 (2013-02-08)
+------------------------
+- [config.xml]: Updated for TEAM-Engine v4.
+- [spsFunctions:getExceptionInfo]: Allow for multiple exceptions (with 0..* ExceptionText) 
+  in exception reports.
+- [sps:core-SPS.GetStatus-RequestWithSinceButServiceNoSupport.1]:
+  Fixed XPath error: "Required item type of first argument of substring-after() 
+  is xs:string; supplied value has item type xs:dateTime"
+
+
 Revision r2 2012-07-20 (rocky)
 - Update test suite for new xlink policy
 

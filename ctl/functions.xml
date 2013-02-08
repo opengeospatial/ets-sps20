@@ -247,10 +247,10 @@
         <ctl:return>True/false depending on whether or not the exception report is valid</ctl:return>
         <ctl:description></ctl:description>
         <ctl:code>
-            <xsl:variable name="exceptionElement" select="$exceptionReport//ows:ExceptionReport/ows:Exception" />
+            <xsl:variable name="exceptionElement" select="$exceptionReport//ows:ExceptionReport/ows:Exception[1]" />
             <xsl:variable name="exceptionCodeValue" select="$exceptionElement/@exceptionCode" />
             <xsl:variable name="locatorValue" select="$exceptionElement/@locator" />
-            <xsl:variable name="exceptionText" select="$exceptionElement//ows:ExceptionText" />
+            <xsl:variable name="exceptionText" select="string-join($exceptionElement//ows:ExceptionText,';')" />
             <xsl:value-of select="concat('ExceptionReport (exceptionCode, locator):  ',$exceptionCodeValue,', ',$locatorValue,' - ',$exceptionText)" />
         </ctl:code>
     </ctl:function>
@@ -259,10 +259,10 @@
         <ctl:return>True/false depending on whether or not the exception report is valid</ctl:return>
         <ctl:description></ctl:description>
         <ctl:code>
-            <xsl:variable name="exceptionElement" select="$exceptionReport//soap12:Detail/ows:Exception" />
+            <xsl:variable name="exceptionElement" select="$exceptionReport//soap12:Detail/ows:Exception[1]" />
             <xsl:variable name="exceptionCodeValue" select="$exceptionElement/@exceptionCode" />
             <xsl:variable name="locatorValue" select="$exceptionElement/@locator" />
-            <xsl:variable name="exceptionText" select="$exceptionElement//ows:ExceptionText" />
+            <xsl:variable name="exceptionText" select="string-join($exceptionElement//ows:ExceptionText,';')" />
             <xsl:value-of select="concat('ExceptionReport (exceptionCode, locator):  ',$exceptionCodeValue,', ',$locatorValue,' - ',$exceptionText)" />
         </ctl:code>
     </ctl:function>
