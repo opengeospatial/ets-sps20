@@ -15,6 +15,7 @@
       </suite>
       <revision>
         <name>r4</name>
+        <status>Beta</status>
         <sources>
           <source>sps/2.0/ctl</source>
         </sources>
