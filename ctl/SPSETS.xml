@@ -8014,7 +8014,7 @@
 									<ctl:message>FAILURE: There must be one and only one element:"sps:unavailableCode" in "sps:unavailable".[<xsl:value-of select="$ProcedureOrTask"/>=<xsl:value-of select="$ValueOfProcedureOrTask"/>]</ctl:message>
 									<ctl:fail />
 								</xsl:when>
-								<xsl:when test="not($DescribeResultAccessResponse//sps:DescribeResultAccessResponse/sps:availability/sps:unavailable/sps:DataNotAvailable/sps:unavailableCode=string('DataNotAvailable')) or not($DescribeResultAccessResponse//sps:DescribeResultAccessResponse/sps:availability/sps:unavailable/sps:DataNotAvailable/sps:unavailableCode=string('DataServiceUnavailable'))">
+								<xsl:when test="not($DescribeResultAccessResponse//sps:DescribeResultAccessResponse/sps:availability/sps:unavailable/sps:DataNotAvailable/sps:unavailableCode=string('DataNotAvailable')) and not($DescribeResultAccessResponse//sps:DescribeResultAccessResponse/sps:availability/sps:unavailable/sps:DataNotAvailable/sps:unavailableCode=string('DataServiceUnavailable'))">
 									<ctl:message>FAILURE: The value of the element:"sps:UnavailableCode" shall be "DataNotAvailable" or "DataServiceUnavailable".[<xsl:value-of select="$ProcedureOrTask"/>=<xsl:value-of select="$ValueOfProcedureOrTask"/>]</ctl:message>
 									<ctl:fail />
 								</xsl:when>
