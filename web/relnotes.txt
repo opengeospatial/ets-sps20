@@ -1,5 +1,11 @@
 SPS 2.0 Test Suite Release Notes
 
+Revision r5 (2013-03-21)
+------------------------
+- removed nested ctl:package elements (intended as document element only)
+- SPSETS.xml line:8017 bug fixed.  "or" change to "and"
+- config.xml: Added "Beta" status tag
+
 
 Revision r4 (2013-02-08)
 ------------------------
@@ -25,4 +31,3 @@ Revision r2 2012-07-20 (rocky)
 
 2012-01-23 (rocky):
 - first revision
-

@@ -17,9 +17,8 @@
 	xmlns:gml="http://www.opengis.net/gml/3.2" 
 	xmlns:ows="http://www.opengis.net/ows/1.1"
 	xmlns:soap12="http://www.w3.org/2003/05/soap-envelope"
-	xmlns:swes="http://www.opengis.net/swes/2.0"
+	xmlns:swes="http://www.opengis.net/swes/2.0">
 
->
 	<!-- 未使用的命名空間 Those namespaces whick are not used in this document
 		xmlns:ocp="http://www.occamlab.com/te/parsers" 
 		xmlns:tep="http://teamengine.sourceforge.net/parsers" 
@@ -199,7 +198,6 @@
 		</ctl:code>
 	</ctl:test>
 
-	<ctl:package> <!-- sps:ows-main -->
 		<ctl:test name="sps:ows-main">
 			<ctl:param name="serviceURL" />
 			<ctl:param name="PostEncodingIsSOAP" />
@@ -234,9 +232,7 @@
 				</ctl:call-test>
 			</ctl:code>
 		</ctl:test>
-	</ctl:package>
 
-	<ctl:package> <!-- sps:general-main-->
 		<ctl:test name="sps:general-main">
 			<ctl:param name="serviceURL" />
 			<ctl:param name="PostEncodingIsSOAP" />
@@ -330,9 +326,7 @@
 				<ctl:message>This general assertion is tested by all other tests, so there is nothing specific to test now.</ctl:message>
 			</ctl:code>
 		</ctl:test>
-	</ctl:package>
 
-	<ctl:package><!-- sps:core-main -->
 		<ctl:test name="sps:core-main">
 			<ctl:param name="serviceURL" />
 			<ctl:param name="PostEncodingIsSOAP" />
@@ -466,9 +460,7 @@
 				</xsl:choose>
 			</ctl:code>
 		</ctl:test>
-	</ctl:package>
 
-	<ctl:package><!--GetCapabilities tests-->
 		<ctl:test name="sps:core-SPS.GetCapabilities">
 			<ctl:param name="getCapabilitiesResponse" />
 			<ctl:param name="serviceURL" />
@@ -1646,9 +1638,7 @@
 				</xsl:choose>
 			</ctl:code>
 		</ctl:test>
-	</ctl:package>
 
-	<ctl:package><!--DescribeSensor tests -->
 		<ctl:test name="sps:core-SPS.DescribeSensor">
 			<ctl:param name="getCapabilitiesResponse" />
 			<ctl:param name="PostEncodingIsSOAP" />
@@ -2837,9 +2827,7 @@
 				</xsl:for-each>
 			</ctl:code>
 		</ctl:test>
-	</ctl:package>
 
-	<ctl:package><!--DescribeTasking tests-->
 		<ctl:test name="sps:core-SPS.DescribeTasking">
 			<ctl:param name="getCapabilitiesResponse" />
 			<ctl:param name="PostEncodingIsSOAP" />
@@ -3673,9 +3661,7 @@
 				</xsl:for-each>
 			</ctl:code>
 		</ctl:test>
-	</ctl:package>
 
-	<ctl:package><!--Submit tests-->
 		<ctl:test name="sps:core-SPS.Submit">
 			<ctl:param name="getCapabilitiesResponse" />
 			<ctl:param name="PostEncodingIsSOAP" />
@@ -5003,10 +4989,7 @@
 				</xsl:for-each>
 			</ctl:code>
 		</ctl:test>
-
-	</ctl:package>
 	
-	<ctl:package><!--GetStatus tests-->
 		<ctl:test name="sps:core-SPS.GetStatus">
 			<ctl:param name="getCapabilitiesResponse" />
 			<ctl:param name="PostEncodingIsSOAP" />
@@ -5949,9 +5932,7 @@
 				</xsl:choose>
 			</ctl:code>
 		</ctl:test>
-	</ctl:package>
 
-	<ctl:package><!--GetTask tests-->
 		<ctl:test name="sps:core-SPS.GetTask">
 			<ctl:param name="getCapabilitiesResponse" />
 			<ctl:param name="PostEncodingIsSOAP" />
@@ -6803,9 +6784,7 @@
 				</xsl:choose>
 			</ctl:code>
 		</ctl:test>
-	</ctl:package>
 
-	<ctl:package><!--DescribeResultAccess tests-->
 		<ctl:test name="sps:core-SPS.DescribeResultAccess">
 			<ctl:param name="getCapabilitiesResponse" />
 			<ctl:param name="PostEncodingIsSOAP" />
@@ -8189,5 +8168,4 @@
 				</xsl:choose>
 			</ctl:code>
 		</ctl:test>
-	</ctl:package>
 </ctl:package>
