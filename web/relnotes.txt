@@ -1,4 +1,15 @@
 SPS 2.0 Test Suite Release Notes
+================================
+
+r6 (2013-05-nn)
+---------------
+- Removed redundant assertion checks that duplicate XML Schema constraints
+  (DescribeResultAccess-CheckResponse, DescribeResultAccess-ReferenceGroup.1).
+- Replaced some nested xsl:choose/xsl:when elements with xsl:if so all constraints 
+  are checked (instead of exiting after first failing assertion).
+- Produce warning in DescribeResultAccess-ReferenceGroup.1 if resource reference 
+  does not match any known case.
+
 
 Revision r5 (2013-03-21)
 ------------------------
