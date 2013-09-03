@@ -1,8 +1,13 @@
 SPS 2.0 Test Suite Release Notes
 ================================
 
-r6 (2013-05-29)
----------------
+Revision r7
+-------------
+- Cleaned documentation (index.html and relnotes) (20130903) - lb
+
+
+Revision r6 (2013-05-29)
+---------------------------
 - Removed redundant assertion checks that duplicate XML Schema constraints
   (DescribeResultAccess-CheckResponse, DescribeResultAccess-ReferenceGroup.1).
 - Replaced some nested xsl:choose/xsl:when elements with xsl:if so all constraints 
@@ -29,16 +34,19 @@ Revision r4 (2013-02-08)
 
 
 Revision r2 2012-07-20 (rocky)
+-------------------------------
 - Update test suite for new xlink policy
 
 
-----r1---
+Revision r1
+-------------
 2012-04-05
 - Update index.html
 - corrected version on config.xml
 
 
-----r0----
+Revision r0
+-------------
 
 2012-01-23 (rocky):
 - first revision
