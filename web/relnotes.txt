@@ -4,7 +4,7 @@ SPS 2.0 Test Suite Release Notes
 Revision r7
 -------------
 - Cleaned documentation (index.html and relnotes) (20130903) - lb
-
+- Add <li>Conformance Class - State Logger:GetStatus</li> to index.html.
 
 Revision r6 (2013-05-29)
 ---------------------------
