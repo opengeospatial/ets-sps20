@@ -14,8 +14,7 @@
         <description>Checks conformance to OGC 09-000.</description>
       </suite>
       <revision>
-        <name>r7</name>
-        <status>Beta</status>
+        <name>r8</name>
         <sources>
           <source>sps/2.0/ctl</source>
         </sources>
