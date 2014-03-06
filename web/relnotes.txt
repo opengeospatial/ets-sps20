@@ -1,6 +1,8 @@
 SPS 2.0 Test Suite Release Notes
 ================================
-
+Revision r8 (2014/03/06)
+-Depended on xlink schemas 1.1 (W3C XLink 1.1) . "http://schemas.opengis.net/xlink/1.0.0/xlinks.xsd" will be changed to "http://www.w3.org/1999/xlink.xsd" and
+		"xlink:simpleLink" will be changed to "xlink: simpleAttrs"
 Revision r7
 -------------
 - Cleaned documentation (index.html and relnotes) (20130903) - lb

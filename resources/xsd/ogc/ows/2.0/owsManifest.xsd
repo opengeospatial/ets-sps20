@@ -24,7 +24,7 @@
         ============================================================== -->
   <include schemaLocation="owsDataIdentification.xsd" />
   <import namespace="http://www.w3.org/1999/xlink"
-          schemaLocation="http://schemas.opengis.net/xlink/1.0.0/xlinks.xsd" />
+          schemaLocation="http://www.w3.org/1999/xlink.xsd" />
 
   <!-- ==========================================================
                 Types and elements
@@ -38,7 +38,7 @@
       <documentation>Base for a reference to a remote or local
       resource.</documentation>
       <documentation>This type contains only a restricted and annotated set of
-      the attributes from the xlink:simpleLink attributeGroup.</documentation>
+      the attributes from the xlink:simpleAttrs attributeGroup.</documentation>
     </annotation>
     <attribute name="type"
                type="string"
@@ -65,7 +65,7 @@
                use="optional">
       <annotation>
         <documentation>Although allowed, this attribute is not expected to be
-        useful in this application of xlink:simpleLink.</documentation>
+        useful in this application of xlink:simpleAttrs.</documentation>
       </annotation>
     </attribute>
     <attribute ref="xlink:title"
@@ -79,14 +79,14 @@
                use="optional">
       <annotation>
         <documentation>Although allowed, this attribute is not expected to be
-        useful in this application of xlink:simpleLink.</documentation>
+        useful in this application of xlink:simpleAttrs.</documentation>
       </annotation>
     </attribute>
     <attribute ref="xlink:actuate"
                use="optional">
       <annotation>
         <documentation>Although allowed, this attribute is not expected to be
-        useful in this application of xlink:simpleLink.</documentation>
+        useful in this application of xlink:simpleAttrs.</documentation>
       </annotation>
     </attribute>
   </complexType>

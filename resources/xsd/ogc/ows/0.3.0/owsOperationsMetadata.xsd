@@ -15,7 +15,7 @@
 		includes and imports
 	============================================================== -->
 	<include schemaLocation="ows19115subset.xsd"/>
-	<import namespace="http://www.w3.org/1999/xlink" schemaLocation="http://schemas.opengis.net/xlink/1.0.0/xlinks.xsd"/>
+	<import namespace="http://www.w3.org/1999/xlink" schemaLocation="http://www.w3.org/1999/xlink.xsd"/>
 	<!-- ==============================================================
 		elements and types
 	============================================================== -->
@@ -107,13 +107,13 @@
 	<!-- ========================================================== -->
 	<element name="Get" type="ows:OnlineResourceType">
 		<annotation>
-			<documentation>Connect point URL prefix for the HTTP "Get" request method for this operation request. The xlink:href attribute in the xlink:simpleLink attribute group shall be used to contain this URL prefix. The other attributes in the xlink:simpleLink attribute group should not be used. </documentation>
+			<documentation>Connect point URL prefix for the HTTP "Get" request method for this operation request. The xlink:href attribute in the xlink:simpleAttrs attribute group shall be used to contain this URL prefix. The other attributes in the xlink:simpleAttrs attribute group should not be used. </documentation>
 		</annotation>
 	</element>
 	<!-- ========================================================== -->
 	<element name="Post">
 		<annotation>
-			<documentation>Connect point URL and accepted format(s) for the HTTP "Post" request method for this operation request. In the OnlineResourceType, the xlink:href attribute in the xlink:simpleLink attribute group shall be used to contain this URL. The other attributes in the xlink:simpleLink attribute group should not be used. </documentation>
+			<documentation>Connect point URL and accepted format(s) for the HTTP "Post" request method for this operation request. In the OnlineResourceType, the xlink:href attribute in the xlink:simpleAttrs attribute group shall be used to contain this URL. The other attributes in the xlink:simpleAttrs attribute group should not be used. </documentation>
 		</annotation>
 		<complexType>
 			<complexContent>
@@ -162,13 +162,13 @@
 	<!-- ========================================================== -->
 	<element name="Metadata">
 		<annotation>
-			<documentation>This element either references or contains more metadata about the element that includes this element. Either at least one of the attributes in xlink:simpleLink or a substitute for the _MetaData element shall be included, but not both. An Implementation Specification can restrict the contents of this element to always be a reference or always contain metadata. (Informative: This element was adapted from the metaDataProperty element in GML 3.0.) </documentation>
+			<documentation>This element either references or contains more metadata about the element that includes this element. Either at least one of the attributes in xlink:simpleAttrs or a substitute for the _MetaData element shall be included, but not both. An Implementation Specification can restrict the contents of this element to always be a reference or always contain metadata. (Informative: This element was adapted from the metaDataProperty element in GML 3.0.) </documentation>
 		</annotation>
 		<complexType>
 			<sequence>
 				<element ref="ows:_MetaData" minOccurs="0"/>
 			</sequence>
-			<attributeGroup ref="xlink:simpleLink">
+			<attributeGroup ref="xlink:simpleAttrs">
 				<annotation>
 					<documentation>Reference to metadata recorded elsewhere, either external to this XML document or within it. Whenever practical, the xlink:href attribute with type anyURI should include a URL from which this metadata can be electronically retrieved. </documentation>
 				</annotation>
