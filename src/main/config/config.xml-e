@@ -19,7 +19,7 @@
           <source>sps/${spec-version}/ctl</source>
         </sources>
         <resources>sps/${spec-version}/resources</resources>
-        <webdir>sps/${spec-version}/site</webdir>
+        <webdir>sps/2.0/site</webdir>
       </revision>
     </version>
   </standard>

@@ -57,6 +57,9 @@
         <ctl:form height="640" width="800">
           <body>
             <h2>Compliance Test Suite for Sensor Planning Service (SPS) 2.0</h2>
+
+            <p>Information about this test suite can be found <a href="." target="_blank">here</a>.</p>p>
+            
             <p>
 						Please provide a URL from which a Capabilities document can 
 						be retrieved. Modify the URL template below to specify the 
