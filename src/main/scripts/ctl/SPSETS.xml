@@ -201,7 +201,7 @@
     </ctl:code>
   </ctl:test>
 
-  <ctl:test name="sps:ows-main">
+  <ctl:test name="sps:ows-main" isConformanceClass="true" isBasic="true">
     <ctl:param name="serviceURL" />
     <ctl:param name="PostEncodingIsSOAP" />
     <ctl:param name="GetCapabilities_GET" />
@@ -236,7 +236,7 @@
     </ctl:code>
   </ctl:test>
 
-  <ctl:test name="sps:general-main">
+  <ctl:test name="sps:general-main" isConformanceClass="true" isBasic="true">
     <ctl:param name="serviceURL" />
     <ctl:param name="PostEncodingIsSOAP" />
     <ctl:param name="GetCapabilities_GET" />
@@ -330,7 +330,7 @@
     </ctl:code>
   </ctl:test>
 
-  <ctl:test name="sps:core-main">
+  <ctl:test name="sps:core-main" isConformanceClass="true" isBasic="true">
     <ctl:param name="serviceURL" />
     <ctl:param name="PostEncodingIsSOAP" />
     <ctl:param name="GetCapabilities_GET" />
