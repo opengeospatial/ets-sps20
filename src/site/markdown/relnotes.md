@@ -1,5 +1,9 @@
 # SPS 2.0 Test Suite Release Notes
 
+## 1.11 (2018-05-18)
+
+- [#1](https://github.com/opengeospatial/ets-sps20/issues/1): Update CTL with better information about conformance classes.
+
 ## 1.9 (2015-02-19)
 
 - Cleaned the structure of the test. The test scripts (ctl) have not changed.
