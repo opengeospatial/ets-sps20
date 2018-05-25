@@ -4,6 +4,7 @@
   <artifactId>ets-sps20</artifactId>
   <groupId>org.opengis.cite</groupId>
   <version>1.12-SNAPSHOT</version>
+  <packaging>pom</packaging>
 
   <name>OGC Sensor Planning Service 2.0.0 - Executable Test Suite</name>
   <description>
@@ -31,6 +32,13 @@
     <system>GitHub Issue Tracker</system>
     <url>https://github.com/opengeospatial/ets-sps20/issues</url>
   </issueManagement>
+  <developers>
+    <developer>
+      <name>Rockygis</name>
+      <url>https://github.com/rockygis</url>
+    </developer>
+  </developers>
+
   <properties>
     <ets-code>sps</ets-code>
     <spec-version>2.0.0</spec-version>
