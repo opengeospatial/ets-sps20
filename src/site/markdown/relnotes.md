@@ -1,5 +1,12 @@
 # SPS 2.0 Test Suite Release Notes
 
+## 1.12 (2025-03-05)
+
+Attention: Java 17 and Tomcat 10.1 are required.
+
+- [#4](https://github.com/opengeospatial/ets-sps20/issues/4): Migrate test suite to TEAM Engine 6 (Java 17)
+- [#3](https://github.com/opengeospatial/ets-sps20/issues/3): Deployment to Central Maven Repository fails
+
 ## 1.11 (2018-05-18)
 
 - [#1](https://github.com/opengeospatial/ets-sps20/issues/1): Update CTL with better information about conformance classes.
