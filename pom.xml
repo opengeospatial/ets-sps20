@@ -9,7 +9,7 @@
 
   <modelVersion>4.0.0</modelVersion>
   <artifactId>ets-sps20</artifactId>
-  <version>1.12</version>
+  <version>1.13-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>OGC Sensor Planning Service 2.0.0 - Executable Test Suite</name>
@@ -32,7 +32,7 @@
     <url>https://github.com/opengeospatial/ets-sps20</url>
     <connection>scm:git:https://github.com/opengeospatial/ets-sps20.git</connection>
     <developerConnection>scm:git:git@github.com:opengeospatial/ets-sps20.git</developerConnection>
-    <tag>1.12</tag>
+    <tag>HEAD</tag>
   </scm>
   <issueManagement>
     <system>GitHub Issue Tracker</system>
