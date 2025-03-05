@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <parent>
+    <groupId>org.opengis.cite</groupId>
+    <artifactId>ets-common</artifactId>
+    <version>15</version>
+  </parent>
+
   <modelVersion>4.0.0</modelVersion>
   <artifactId>ets-sps20</artifactId>
-  <groupId>org.opengis.cite</groupId>
   <version>1.12-SNAPSHOT</version>
   <packaging>pom</packaging>
 
@@ -14,13 +21,13 @@
   <licenses>
     <license>
       <name>Apache License, Version 2.0</name>
-      <url>http://opensource.org/licenses/Apache-2.0</url>
+      <url>https://opensource.org/licenses/Apache-2.0</url>
     </license>
   </licenses>
 
   <organization>
     <name>Open Geospatial Consortium</name>
-    <url>http://www.opengeospatial.org</url>
+    <url>https://www.ogc.org</url>
   </organization>
   <scm>
     <url>https://github.com/opengeospatial/ets-sps20</url>
@@ -37,133 +44,89 @@
       <name>Rockygis</name>
       <url>https://github.com/rockygis</url>
     </developer>
+    <developer>
+      <name>Dirk Stenger</name>
+      <url>https://github.com/dstenger</url>
+    </developer>
   </developers>
 
   <properties>
     <ets-code>sps</ets-code>
     <spec-version>2.0.0</spec-version>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <teamengine.version>4.0.5</teamengine.version>
   </properties>
-  <reporting>
-    <plugins>
-      <plugin>
-        <artifactId>maven-project-info-reports-plugin</artifactId>
-        <version>2.7</version>
-        <reportSets>
-          <reportSet>
-            <reports>
-              <report>license</report>
-              <report>issue-tracking</report>
-              <report>scm</report>
-            </reports>
-          </reportSet>
-        </reportSets>
-      </plugin>
-    </plugins>
-  </reporting>
 
   <build>
     <plugins>
       <plugin>
-        <artifactId>maven-jar-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>default-jar</id>
-            <phase>never</phase>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <configuration>
-          <skipTests>true</skipTests>
-        </configuration>
-      </plugin>
-      <plugin>
         <artifactId>maven-assembly-plugin</artifactId>
         <configuration>
           <descriptors>
-            <descriptor>src/assembly/ctl.xml</descriptor>
+            <descriptor>src/assembly/ctl-scripts.xml</descriptor>
           </descriptors>
         </configuration>
-        <executions>
-          <execution>
-            <phase>package</phase>
-            <goals>
-              <goal>single</goal>
-            </goals>
-          </execution>
-        </executions>
       </plugin>
       <plugin>
-        <artifactId>maven-site-plugin</artifactId>
-        <version>3.4</version>
-        <configuration>
-          <relativizeDecorationLinks>false</relativizeDecorationLinks>
-          <skipDeploy>true</skipDeploy>
-        </configuration>
-        <executions>
-          <execution>
-            <id>site-package</id>
-            <phase>prepare-package</phase>
-            <goals>
-              <goal>site</goal>
-            </goals>
-          </execution>
-        </executions>
-        <dependencies>
-          <dependency>
-            <groupId>org.apache.maven.doxia</groupId>
-            <artifactId>doxia-module-markdown</artifactId>
-            <version>1.6</version>
-          </dependency>
-        </dependencies>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-release-plugin</artifactId>
-        <version>2.5.3</version>
-        <configuration>
-          <autoVersionSubmodules>true</autoVersionSubmodules>
-          <tagNameFormat>@{project.version}</tagNameFormat>
-          <releaseProfiles>release</releaseProfiles>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-scm-publish-plugin</artifactId>
-        <version>1.1</version>
-        <configuration>
-          <scmBranch>gh-pages</scmBranch>
-        </configuration>
       </plugin>
     </plugins>
+
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>io.fabric8</groupId>
+          <artifactId>docker-maven-plugin</artifactId>
+          <configuration>
+            <images>
+              <image>
+                <run>
+                  <ports>
+                    <port>8081:8080</port>
+                  </ports>
+                  <wait>
+                    <http>
+                      <url>http://localhost:8081/teamengine</url>
+                    </http>
+                    <time>120000</time>
+                  </wait>
+                </run>
+              </image>
+            </images>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
   </build>
 
   <profiles>
     <profile>
-      <id>release</id>
+      <id>docker</id>
       <build>
         <plugins>
           <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-gpg-plugin</artifactId>
-            <version>1.6</version>
+            <groupId>io.fabric8</groupId>
+            <artifactId>docker-maven-plugin</artifactId>
             <executions>
               <execution>
-                <id>sign-artifacts</id>
-                <phase>verify</phase>
+                <id>build</id>
                 <goals>
-                  <goal>sign</goal>
+                  <goal>build</goal>
                 </goals>
-                <configuration>
-                  <!-- Enable if GPG 2.1+ is used -->
-                  <!--<gpgArguments>
-                    <arg>&#45;&#45;pinentry-mode</arg>
-                    <arg>loopback</arg>
-                  </gpgArguments>-->
-                </configuration>
+              </execution>
+              <execution>
+                <id>push</id>
+                <goals>
+                  <goal>push</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <artifactId>maven-dependency-plugin</artifactId>
+            <executions>
+              <execution>
+                <goals>
+                  <goal>copy</goal>
+                </goals>
               </execution>
             </executions>
           </plugin>
@@ -173,10 +136,6 @@
   </profiles>
 
   <distributionManagement>
-    <repository>
-      <id>sonatype-nexus-staging</id>
-      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-    </repository>
     <site>
       <id>site</id>
       <url>scm:git:git@github.com:opengeospatial/ets-sps20.git</url>
